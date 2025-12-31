@@ -16,7 +16,7 @@ public class MenuState extends State {
     public MenuState(GameStateManager gsm) {
         super(gsm);
         batch = gsm.getMain().getBatch();
-        font = new BitmapFont();
+        font = gsm.getMain().getFont();
         this.gsm = gsm;
     }
 
@@ -32,7 +32,7 @@ public class MenuState extends State {
             return;
         }
         batch.begin();
-        font.draw(batch, "Start Game?", 100, 100);
+        font.draw(batch, "Start Game?", Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         batch.end();
     }
 

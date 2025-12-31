@@ -15,7 +15,7 @@ public class GameOverState extends State {
     public GameOverState(GameStateManager gsm) {
         super(gsm);
         batch = gsm.getMain().getBatch();
-        font = new BitmapFont();
+        gsm.getMain().getFont();
         this.gsm = gsm;
     }
 
@@ -32,7 +32,7 @@ public class GameOverState extends State {
         }
 
         batch.begin();
-        font.draw(batch, "Game Over", 100, 100);
+        font.draw(batch, "Game Over", Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         batch.end();
     }
 
